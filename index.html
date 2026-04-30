@@ -86,7 +86,7 @@
       transition: 0.6s ease;
     }
   
-    /* Sections */
+    /* About Section */
     .about {
       padding: 4rem 3rem;
       text-align: center;
@@ -99,11 +99,86 @@
       color: #ec6bb9;
     }
   
+    /* Gallery Section */
     .gallery {
       padding: 4rem 3rem;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2.5rem;
+    }
+  
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      transition: 0.4s ease;
+      cursor: pointer;
+      position: relative;
+    }
+  
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    }
+  
+    /* FIXED: Controlled Image Sizing */
+    .card img {
+      width: 100%;
+      height: 300px; /* This keeps them from being "huge" */
+      object-fit: cover; /* This crops them beautifully */
+      display: block;
+      transition: 0.6s;
+    }
+  
+    .card:hover img { 
+      transform: scale(1.1); 
+    }
+  
+    .badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #ff6fb5;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+  
+    .card-content { 
+      padding: 1.2rem; 
+    }
+  
+    .price { 
+      color: #ff6fb5; 
+      font-weight: 600; 
+    }
+  
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+  
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+  
+    .contact {
+      padding: 3rem;
+      text-align: center;
+      background: #fff0f8;
     }
   
     /* MOBILE TWEAKS */
@@ -113,7 +188,7 @@
       }
   
       .hero {
-        height: auto; /* Collapses the empty space on mobile */
+        height: auto;
         min-height: 50vh;
         padding: 2rem 1rem;
       }
@@ -125,12 +200,17 @@
       }
   
       .about {
-        padding: 2.5rem 1.5rem; /* Tighter spacing for About section */
+        padding: 2.5rem 1.5rem;
       }
   
       .gallery {
-        padding: 2rem 1.5rem;
+        padding: 2rem 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 1.5rem;
+      }
+  
+      .card img {
+        height: 250px; /* Slightly shorter on mobile */
       }
     }
   </style>
