@@ -29,10 +29,10 @@
       font-family: 'Playfair Display', serif; 
     }
   
-    /* Updated Navigation Styles */
+    /* Navigation Bar */
     nav {
       display: flex;
-      justify-content: space-between; /* This pushes logo left and menu right */
+      justify-content: space-between;
       align-items: center;
       padding: 1.2rem 3rem;
       background: rgba(255, 255, 255, 0.85);
@@ -59,11 +59,11 @@
       text-decoration: none;
       color: #444;
       font-weight: 500;
-      transition: color 0.3s ease; /* Smooth hover transition */
+      transition: color 0.3s ease;
     }
   
     nav a:hover { 
-      color: #ff6fb5; /* Your pink hover color */
+      color: #ff6fb5; 
     }
   
     /* Hero Section */
@@ -86,86 +86,7 @@
       transition: 0.6s ease;
     }
   
-    .hero img:hover {
-      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.03);
-      filter: drop-shadow(0 35px 60px rgba(0,0,0,0.2));
-    }
-  
-    /* Gallery Section */
-    .gallery {
-      padding: 4rem 3rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.5rem;
-    }
-  
-    .card {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-      transition: 0.4s ease;
-      cursor: pointer;
-      position: relative;
-    }
-  
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.12);
-    }
-  
-    .card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      transition: 0.6s;
-    }
-  
-    .card:hover img { 
-      transform: scale(1.1); 
-    }
-  
-    .badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: #ff6fb5;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-    }
-  
-    .card-content { 
-      padding: 1.2rem; 
-    }
-  
-    .price { 
-      color: #ff6fb5; 
-      font-weight: 600; 
-    }
-  
-    /* Lightbox */
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.92);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-    }
-  
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-  
-    /* About and Contact */
+    /* Sections */
     .about {
       padding: 4rem 3rem;
       text-align: center;
@@ -178,10 +99,39 @@
       color: #ec6bb9;
     }
   
-    .contact {
-      padding: 3rem;
-      text-align: center;
-      background: #fff0f8;
+    .gallery {
+      padding: 4rem 3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.5rem;
+    }
+  
+    /* MOBILE TWEAKS */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+  
+      .hero {
+        height: auto; /* Collapses the empty space on mobile */
+        min-height: 50vh;
+        padding: 2rem 1rem;
+      }
+  
+      .hero img {
+        height: auto;
+        max-height: 60vh;
+        margin-bottom: 0;
+      }
+  
+      .about {
+        padding: 2.5rem 1.5rem; /* Tighter spacing for About section */
+      }
+  
+      .gallery {
+        padding: 2rem 1.5rem;
+        gap: 1.5rem;
+      }
     }
   </style>
 </head>
