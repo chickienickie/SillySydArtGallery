@@ -12,92 +12,61 @@
   <script src="https://www.paypal.com/sdk/js?client-id=AfSYLT7Koxf4iNxP4xx_YNb9XmAuOMMfzpxFbB30oyjFRtWP9s7EySpVHGXGnBAdzcSwEHBZpvcNJwkf&currency=USD"></script>
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-/* General Page Styling */
-body {
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
-}
-
-/* Navigation Bar */
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px;
-  background-color: #ffffff;
-  height: auto;
-}
-
-/* Logo inside the Nav */
-nav img {
-  width: 150px;
-  height: auto;
-  margin-left: 0;
-  display: block;
-}
-
-/* Nav Menu Links */
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 20px; /* Adjust spacing between Gallery and Contact */
-}
-
-/* Hero Section Container */
-section.hero {
-  background-color: #ffffff;
-  padding: 0;
-  margin: 0;
-  display: block;
-}
-
-/* Main Hero Image */
-section.hero img {
-  display: block;
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  margin: 0 auto 40px; /* Centered with bottom spacing */
-  /* Keeps your existing 3D tilt effect */
-  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
-}
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+  
     body {
       font-family: 'Inter', sans-serif;
       background: #f6f6f7;
       color: #222;
+      margin: 0;
     }
-
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
+  
+    h1, h2, h3 { 
+      font-family: 'Playfair Display', serif; 
+    }
+  
+    /* Updated Navigation Styles */
     nav {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between; /* This pushes logo left and menu right */
       align-items: center;
       padding: 1.2rem 3rem;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-
-    nav img { height: 55px; }
-
-    nav ul { display: flex; gap: 2rem; list-style: none; }
-
+  
+    nav img { 
+      height: 55px; 
+      display: block;
+    }
+  
+    nav ul { 
+      display: flex; 
+      gap: 2rem; 
+      list-style: none; 
+      margin: 0;
+      padding: 0;
+    }
+  
     nav a {
       text-decoration: none;
       color: #444;
       font-weight: 500;
+      transition: color 0.3s ease; /* Smooth hover transition */
     }
-
-    nav a:hover { color: #ff6fb5; }
-
+  
+    nav a:hover { 
+      color: #ff6fb5; /* Your pink hover color */
+    }
+  
+    /* Hero Section */
     .hero {
       height: 100vh;
       background: white;
@@ -106,11 +75,9 @@ section.hero img {
       justify-content: center;
       text-align: center;
       padding: 20px;
-      margin-bottom: 0;
     }
-
+  
     .hero img {
-      width: auto;
       height: 95vh;
       max-width: 95vw;
       object-fit: contain;
@@ -118,31 +85,20 @@ section.hero img {
       transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
       transition: 0.6s ease;
     }
-
-    .hero img:hover {
-      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
-      filter: drop-shadow(0 45px 70px rgba(0,0,0,0.25));
-    }
-
-    .hero img:hover {
-      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
-      filter: drop-shadow(0 45px 70px rgba(0,0,0,0.25));
-    }
-
+  
     .hero img:hover {
       transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.03);
       filter: drop-shadow(0 35px 60px rgba(0,0,0,0.2));
     }
-
-    .hero img { max-width: 320px; }
-
+  
+    /* Gallery Section */
     .gallery {
       padding: 4rem 3rem;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2.5rem;
     }
-
+  
     .card {
       background: white;
       border-radius: 18px;
@@ -152,21 +108,23 @@ section.hero img {
       cursor: pointer;
       position: relative;
     }
-
+  
     .card:hover {
       transform: translateY(-10px);
       box-shadow: 0 20px 50px rgba(0,0,0,0.12);
     }
-
+  
     .card img {
       width: 100%;
       height: 260px;
       object-fit: cover;
       transition: 0.6s;
     }
-
-    .card:hover img { transform: scale(1.1); }
-
+  
+    .card:hover img { 
+      transform: scale(1.1); 
+    }
+  
     .badge {
       position: absolute;
       top: 12px;
@@ -177,13 +135,17 @@ section.hero img {
       border-radius: 20px;
       font-size: 12px;
     }
-
-    .card-content { padding: 1.2rem; }
-
-    .price { color: #ff6fb5; font-weight: 600; }
-
-    .paypal-btn { margin-top: 10px; }
-
+  
+    .card-content { 
+      padding: 1.2rem; 
+    }
+  
+    .price { 
+      color: #ff6fb5; 
+      font-weight: 600; 
+    }
+  
+    /* Lightbox */
     .lightbox {
       position: fixed;
       top: 0;
@@ -196,49 +158,42 @@ section.hero img {
       justify-content: center;
       z-index: 2000;
     }
-
+  
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
       border-radius: 10px;
     }
-
+  
+    /* About and Contact */
     .about {
       padding: 4rem 3rem;
       text-align: center;
       background: #b9d6d9;
-      
     }
-
+  
     .about p {
       max-width: 600px;
       margin: 1rem auto;
       color: #ec6bb9;
     }
-
+  
     .contact {
       padding: 3rem;
       text-align: center;
       background: #fff0f8;
     }
-
-    
-
   </style>
 </head>
 <body>
 
-<nav>
     <nav>
-        <a href="/" style="display: contents;">
-          <img src="artlogo.png" alt="Logo">
-        </a>
-
-  <ul>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+        <a href="/"><img src="artlogo.png" alt="Logo"></a>
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
 
 <section class="hero">
   <img src="artlogo.png" alt="Logo">
