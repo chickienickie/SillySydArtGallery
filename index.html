@@ -106,6 +106,7 @@ section.hero img {
       justify-content: center;
       text-align: center;
       padding: 20px;
+      margin-bottom: 0;
     }
 
     .hero img {
@@ -205,13 +206,14 @@ section.hero img {
     .about {
       padding: 4rem 3rem;
       text-align: center;
-      background: white;
+      background: #b9d6d9;
+      
     }
 
     .about p {
       max-width: 600px;
       margin: 1rem auto;
-      color: #666;
+      color: #ec6bb9;
     }
 
     .contact {
@@ -219,6 +221,59 @@ section.hero img {
       text-align: center;
       background: #fff0f8;
     }
+
+    @media (max-width: 600px) {
+  /* Navigation Bar Improvements */
+  nav {
+    padding: 0.8rem 1rem !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Logo scaling */
+  nav img {
+    height: 40px !important;
+    width: auto !important;
+  }
+
+  /* Hero Section - Fixing the large gap */
+  section.hero {
+    height: auto !important;
+    min-height: 40vh !important;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0 !important;
+  }
+
+  /* About Section - Tightening the transition */
+  section.about {
+    padding-top: 2rem !important;
+  }
+}
 
   </style>
 </head>
@@ -243,7 +298,7 @@ section.hero img {
 
 <section id="gallery" class="gallery">
 
-  <div class="card" onclick="openLightbox('art1.jpg')">
+  <div class="card" onclick="openLightbox('bluevspink.jpeg')">
     <div class="badge">Original</div>
     <img src="bluevspink.jpeg">
     <div class="card-content">
@@ -253,7 +308,7 @@ section.hero img {
     </div>
   </div>
 
-  <div class="card" onclick="openLightbox('art2.jpg')">
+  <div class="card" onclick="openLightbox('house.jpeg')">
     <div class="badge">Original</div>
     <img src="house.jpeg">
     <div class="card-content">
@@ -263,7 +318,7 @@ section.hero img {
     </div>
   </div>
 
-  <div class="card" onclick="openLightbox('art1.jpg')">
+  <div class="card" onclick="openLightbox('bowpanda.jpeg')">
     <div class="badge">Original</div>
     <img src="bowpanda.jpeg">
     <div class="card-content">
@@ -273,7 +328,7 @@ section.hero img {
     </div>
   </div>
 
-  <div class="card" onclick="openLightbox('art2.jpg')">
+  <div class="card" onclick="openLightbox('mermaid.jpeg')">
     <div class="badge">Original</div>
     <img src="mermaid.jpeg">
     <div class="card-content">
@@ -283,7 +338,7 @@ section.hero img {
     </div>
   </div>
 
-  <div class="card" onclick="openLightbox('art2.jpg')">
+  <div class="card" onclick="openLightbox('thehappyfish.png')">
     <div class="badge">Original</div>
     <img src="thehappyfish.png">
     <div class="card-content">
